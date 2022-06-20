@@ -15,7 +15,16 @@ return new class extends Migration
     {
         Schema::create('films', function (Blueprint $table) {
             $table->id();
+            $table->string('title');
+            $table->string('description');
+            $table->string('poster')->nullable();
+            $table->date('release_date');
+            $table->integer('duration');
+            $table->integer('rating');
+            $table->integer('budget')->nullable();
+            $table->integer('revenue')->nullable();
             $table->timestamps();
+            $table->foreignId('director_id')->constrained();
         });
     }
 
