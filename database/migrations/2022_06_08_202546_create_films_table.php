@@ -24,7 +24,7 @@ return new class extends Migration
             $table->integer('budget')->nullable();
             $table->integer('revenue')->nullable();
             $table->timestamps();
-            $table->foreignId('director_id')->constrained();
+            $table->foreignId('director_id')->constrained()->cascadeOnDelete();
         });
     }
 
