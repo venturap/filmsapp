@@ -15,7 +15,12 @@ class FilmController extends Controller
      */
     public function index()
     {
-        //
+       return response()->json(
+        Film::with(
+        ['director:id,name,surname',
+        'actors:id,name,surname',
+        'genres:id,name']
+        )->get());
     }
 
     /**
